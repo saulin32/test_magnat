@@ -13,7 +13,7 @@ const userName = computed(() => userStore.login);
       Привет,
       <span class="header-name-user"> {{ userName }} </span>
     </p>
-    <a class="header-logout" href="/login"> Выйти </a>
+    <a class="header-logout" href="login"> Выйти </a>
   </header>
 </template>
 

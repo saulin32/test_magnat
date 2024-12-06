@@ -25,9 +25,14 @@ router.beforeEach((to, from, next) => {
   const userStore = useUserStore();
   if (userStore.login === '' && to.name !== 'login') {
     next('/login');
+    return;
   } else {
-    next();
+    if (!router.hasRoute(to.name)) {
+      next('/main');
+      return;
+    }
   }
+  next();
 });
 
 export default router;
