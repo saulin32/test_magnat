@@ -27,7 +27,7 @@ router.beforeEach((to, from, next) => {
     next('/login');
     return;
   } else {
-    if (!router.hasRoute(to.name)) {
+    if (!to.name || !router.hasRoute(to.name)) {
       next('/main');
       return;
     }
